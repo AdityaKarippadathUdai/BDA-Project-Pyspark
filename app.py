@@ -345,6 +345,6 @@ st.markdown("""
 <div style="text-align:center; margin-top:2.5rem; padding-top:1rem;
             border-top:1px solid #e0d8cc; font-family:'JetBrains Mono',monospace;
             font-size:0.65rem; color:#c0b8ac; letter-spacing:0.08em;">
-  DIABETESSCAN · RANDOM FOREST · TRAINED LIVE ON STREAMLIT CLOUD
+  DIABETESSCAN · TRAINED LIVE ON STREAMLIT CLOUD
 </div>
 """, unsafe_allow_html=True)
