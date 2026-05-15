@@ -205,7 +205,7 @@ The app only uses the 4 features listed above — extra columns are ignored.
 
 ```bash
 # Clone your repo
-git clone https://github.com/YOUR_USERNAME/diabetes-scan.git
+git clone https://github.com/AdityaKarippadathUdai/BDA-Project-Pyspark
 cd diabetes-scan
 
 # Create a virtual environment (recommended)
