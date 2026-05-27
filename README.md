@@ -22,6 +22,13 @@ It outputs:
 - **Input vs Clinical Thresholds** — visual bars comparing your values to ADA 2024 cutoffs
 - **Feature Importance Chart** — which of the 4 inputs most influenced the model
 
+
+<div align="center">
+
+<img src="./assets/training-animation.svg" width="100%"/>
+
+</div>
+
 ---
 
 ## 📁 Repository Structure
