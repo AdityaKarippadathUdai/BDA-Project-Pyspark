@@ -34,7 +34,9 @@ It outputs:
 ## 📁 Repository Structure
 
 ```
-your-repo/
+Diabetes-Risk-Prediction/
+├── assets/
+│   └── training-animation.svg 
 ├── app.py                    ← Main Streamlit application
 ├── diabetes_dataset.csv      ← Dataset (100,000 rows × 16 columns) ⭐ required
 ├── requirements.txt          ← Python dependencies
@@ -212,7 +214,7 @@ The app only uses the 4 features listed above — extra columns are ignored.
 
 ```bash
 # Clone your repo
-git clone https://github.com/AdityaKarippadathUdai/BDA-Project-Pyspark
+git clone https://github.com/AdityaKarippadathUdai/Diabetes-Risk-Prediction
 cd diabetes-scan
 
 # Create a virtual environment (recommended)
