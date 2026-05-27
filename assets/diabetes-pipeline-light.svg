@@ -1,0 +1,264 @@
+<svg width="1400" height="1100" viewBox="0 0 1400 1100"
+     xmlns="http://www.w3.org/2000/svg">
+
+    <defs>
+        <!-- Background Gradient (Light) -->
+        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f8fafc"/>
+            <stop offset="50%" stop-color="#f1f5f9"/>
+            <stop offset="100%" stop-color="#e2e8f0"/>
+        </linearGradient>
+
+        <!-- Accent Gradients -->
+        <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#059669"/>
+            <stop offset="100%" stop-color="#0891b2"/>
+        </linearGradient>
+        <linearGradient id="riskLow" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#dcfce7"/>
+            <stop offset="100%" stop-color="#86efac"/>
+        </linearGradient>
+        <linearGradient id="riskMod" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#fef9c3"/>
+            <stop offset="100%" stop-color="#fde047"/>
+        </linearGradient>
+        <linearGradient id="riskHigh" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#fee2e2"/>
+            <stop offset="100%" stop-color="#fca5a5"/>
+        </linearGradient>
+
+        <!-- Grid Pattern (Light) -->
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M40 0 L0 0 0 40" fill="none" stroke="#cbd5e1" stroke-width="0.5"/>
+        </pattern>
+
+        <!-- Arrowhead Marker -->
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#059669"/>
+        </marker>
+        <marker id="arrowheadBlue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#0ea5e9"/>
+        </marker>
+        <marker id="arrowheadPurple" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#8b5cf6"/>
+        </marker>
+    </defs>
+
+    <!-- ========== BACKGROUND ========== -->
+    <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+    <rect width="100%" height="100%" fill="url(#grid)" opacity="0.3"/>
+
+    <!-- ========== HEADER ========== -->
+    <rect x="200" y="30" width="1000" height="95" rx="15" fill="#ffffff" stroke="url(#headerGrad)" stroke-width="2.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.05))"/>
+    <text x="700" y="62" fill="#059669" font-size="28" font-weight="bold" text-anchor="middle" letter-spacing="1">
+        DiabetesScan — Random Forest
+    </text>
+    <text x="700" y="92" fill="#0f172a" font-size="28" font-weight="bold" text-anchor="middle" letter-spacing="1">
+        Diabetes Risk Predictor
+    </text>
+    <text x="700" y="112" fill="#64748b" font-size="15" text-anchor="middle">
+        Streamlit · Random Forest · SMOTE · SHAP
+    </text>
+
+    <!-- ========== INPUT SECTION ========== -->
+    <text x="700" y="170" fill="#0ea5e9" font-size="22" font-weight="bold" text-anchor="middle" letter-spacing="2">
+        ▸ PATIENT INPUTS ◂
+    </text>
+
+    <!-- Input Cards (Light) -->
+    <!-- HbA1c -->
+    <g transform="translate(100, 200)">
+        <rect x="0" y="0" width="240" height="100" rx="12" fill="#ffffff" stroke="#0ea5e9" stroke-width="1.5" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.1))"/>
+        <text x="120" y="30" fill="#0ea5e9" font-size="16" font-weight="bold" text-anchor="middle">🧪 HbA1c Level (%)</text>
+        <text x="120" y="55" fill="#475569" font-size="14" text-anchor="middle">Slider: 3.5 – 9.0</text>
+        <text x="120" y="75" fill="#64748b" font-size="12" text-anchor="middle">ADA 2024: ≥6.5% → Diabetes</text>
+        <rect x="60" y="85" width="120" height="4" rx="2" fill="#e2e8f0"/>
+        <rect x="60" y="85" width="70" height="4" rx="2" fill="#ef4444"/>
+    </g>
+
+    <!-- Age -->
+    <g transform="translate(370, 200)">
+        <rect x="0" y="0" width="240" height="100" rx="12" fill="#ffffff" stroke="#0ea5e9" stroke-width="1.5" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.1))"/>
+        <text x="120" y="30" fill="#0ea5e9" font-size="16" font-weight="bold" text-anchor="middle">🎂 Age (years)</text>
+        <text x="120" y="55" fill="#475569" font-size="14" text-anchor="middle">Integer: 1 – 100</text>
+        <text x="120" y="75" fill="#64748b" font-size="12" text-anchor="middle">Risk ↑ significantly after 45</text>
+        <rect x="60" y="85" width="120" height="4" rx="2" fill="#e2e8f0"/>
+        <rect x="60" y="85" width="55" height="4" rx="2" fill="#f97316"/>
+    </g>
+
+    <!-- BMI -->
+    <g transform="translate(640, 200)">
+        <rect x="0" y="0" width="240" height="100" rx="12" fill="#ffffff" stroke="#0ea5e9" stroke-width="1.5" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.1))"/>
+        <text x="120" y="30" fill="#0ea5e9" font-size="16" font-weight="bold" text-anchor="middle">⚖️ BMI</text>
+        <text x="120" y="55" fill="#475569" font-size="14" text-anchor="middle">Slider: 10.0 – 60.0</text>
+        <text x="120" y="75" fill="#64748b" font-size="12" text-anchor="middle">Obese ≥30.0</text>
+        <rect x="60" y="85" width="120" height="4" rx="2" fill="#e2e8f0"/>
+        <rect x="60" y="85" width="50" height="4" rx="2" fill="#eab308"/>
+    </g>
+
+    <!-- Gender -->
+    <g transform="translate(910, 200)">
+        <rect x="0" y="0" width="240" height="100" rx="12" fill="#ffffff" stroke="#0ea5e9" stroke-width="1.5" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.1))"/>
+        <text x="120" y="30" fill="#0ea5e9" font-size="16" font-weight="bold" text-anchor="middle">👤 Gender</text>
+        <text x="120" y="55" fill="#475569" font-size="14" text-anchor="middle">Radio: Female / Male</text>
+        <text x="120" y="75" fill="#64748b" font-size="12" text-anchor="middle">Encoded → gender_Male</text>
+        <rect x="60" y="85" width="120" height="4" rx="2" fill="#e2e8f0"/>
+        <rect x="60" y="85" width="30" height="4" rx="2" fill="#06b6d4"/>
+    </g>
+
+    <!-- ========== PIPELINE STAGES ========== -->
+
+    <!-- Arrow from Inputs to Pipeline -->
+    <line x1="700" y1="310" x2="700" y2="350" stroke="#059669" stroke-width="3" marker-end="url(#arrowhead)"/>
+
+    <!-- Stage 1: Data Loading -->
+    <g transform="translate(100, 360)">
+        <rect x="0" y="0" width="350" height="120" rx="14" fill="#ffffff" stroke="#eab308" stroke-width="2" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.05))"/>
+        <text x="175" y="30" fill="#eab308" font-size="18" font-weight="bold" text-anchor="middle">📁 1. Data Loading</text>
+        <text x="175" y="55" fill="#334155" font-size="14" text-anchor="middle">diabetes_dataset.csv</text>
+        <text x="175" y="75" fill="#475569" font-size="12" text-anchor="middle">100,000 rows × 16 columns</text>
+        <text x="175" y="95" fill="#64748b" font-size="12" text-anchor="middle">No pre-saved model — trained live</text>
+    </g>
+
+    <!-- Arrow -->
+    <line x1="450" y1="420" x2="520" y2="420" stroke="#059669" stroke-width="3" marker-end="url(#arrowhead)"/>
+
+    <!-- Stage 2: Preprocessing -->
+    <g transform="translate(530, 360)">
+        <rect x="0" y="0" width="350" height="120" rx="14" fill="#ffffff" stroke="#059669" stroke-width="2" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.05))"/>
+        <text x="175" y="30" fill="#059669" font-size="18" font-weight="bold" text-anchor="middle">🧹 2. Preprocessing</text>
+        <text x="175" y="55" fill="#334155" font-size="14" text-anchor="middle">Clean · Drop missing values</text>
+        <text x="175" y="75" fill="#334155" font-size="14" text-anchor="middle">Encode gender → gender_Male</text>
+        <text x="175" y="95" fill="#475569" font-size="12" text-anchor="middle">Select 4 features</text>
+    </g>
+
+    <!-- Arrow -->
+    <line x1="880" y1="420" x2="950" y2="420" stroke="#059669" stroke-width="3" marker-end="url(#arrowhead)"/>
+
+    <!-- Stage 3: SMOTE + Scaling -->
+    <g transform="translate(960, 360)">
+        <rect x="0" y="0" width="340" height="120" rx="14" fill="#ffffff" stroke="#8b5cf6" stroke-width="2" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.05))"/>
+        <text x="170" y="30" fill="#8b5cf6" font-size="18" font-weight="bold" text-anchor="middle">⚖️ 3. SMOTE + Scaling</text>
+        <text x="170" y="55" fill="#334155" font-size="14" text-anchor="middle">SMOTE oversampling (8.5% → 50/50)</text>
+        <text x="170" y="75" fill="#334155" font-size="14" text-anchor="middle">StandardScaler fit on train set</text>
+        <text x="170" y="95" fill="#475569" font-size="12" text-anchor="middle">Prevents bias toward majority class</text>
+    </g>
+
+    <!-- Arrow -->
+    <line x1="700" y1="490" x2="700" y2="550" stroke="#059669" stroke-width="3" marker-end="url(#arrowhead)"/>
+
+    <!-- Stage 4: Random Forest Training -->
+    <g transform="translate(300, 560)">
+        <rect x="0" y="0" width="800" height="140" rx="18" fill="#ffffff" stroke="#059669" stroke-width="3" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.05))"/>
+        <text x="400" y="35" fill="#059669" font-size="22" font-weight="bold" text-anchor="middle">🌲 4. Random Forest Training</text>
+
+        <rect x="30" y="55" width="160" height="60" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+        <text x="110" y="80" fill="#0ea5e9" font-size="14" font-weight="bold" text-anchor="middle">n_estimators</text>
+        <text x="110" y="100" fill="#0f172a" font-size="16" font-weight="bold" text-anchor="middle">200</text>
+
+        <rect x="220" y="55" width="160" height="60" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+        <text x="300" y="80" fill="#0ea5e9" font-size="14" font-weight="bold" text-anchor="middle">max_depth</text>
+        <text x="300" y="100" fill="#0f172a" font-size="16" font-weight="bold" text-anchor="middle">10</text>
+
+        <rect x="410" y="55" width="160" height="60" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+        <text x="490" y="80" fill="#0ea5e9" font-size="14" font-weight="bold" text-anchor="middle">random_state</text>
+        <text x="490" y="100" fill="#0f172a" font-size="16" font-weight="bold" text-anchor="middle">42</text>
+
+        <rect x="600" y="55" width="160" height="60" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+        <text x="680" y="80" fill="#0ea5e9" font-size="14" font-weight="bold" text-anchor="middle">n_jobs</text>
+        <text x="680" y="100" fill="#0f172a" font-size="16" font-weight="bold" text-anchor="middle">-1 (All CPU)</text>
+    </g>
+
+    <!-- Arrow -->
+    <line x1="700" y1="710" x2="700" y2="770" stroke="#059669" stroke-width="3" marker-end="url(#arrowhead)"/>
+
+    <!-- ========== OUTPUT SECTION ========== -->
+    <text x="700" y="800" fill="#0ea5e9" font-size="22" font-weight="bold" text-anchor="middle" letter-spacing="2">
+        ▸ PREDICTION &amp; OUTPUT ◂
+    </text>
+
+    <!-- Output Cards (Light) -->
+    <!-- Risk Level -->
+    <g transform="translate(100, 830)">
+        <rect x="0" y="0" width="280" height="145" rx="14" fill="#ffffff" stroke="#059669" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.05))"/>
+        <text x="140" y="30" fill="#059669" font-size="18" font-weight="bold" text-anchor="middle">📊 Risk Level</text>
+        <rect x="25" y="45" width="230" height="45" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+        <text x="140" y="62" fill="#334155" font-size="13" text-anchor="middle">
+            &lt;30% Low
+        </text>
+        <text x="140" y="80" fill="#334155" font-size="13" text-anchor="middle">
+            30-59% Moderate · ≥60% High
+        </text>
+        <rect x="30" y="105" width="70" height="25" rx="6" fill="url(#riskLow)" stroke="#86efac" stroke-width="1"/>
+        <text x="65" y="122" fill="#166534" font-size="12" font-weight="bold" text-anchor="middle">Low</text>
+        <rect x="105" y="105" width="70" height="25" rx="6" fill="url(#riskMod)" stroke="#fde047" stroke-width="1"/>
+        <text x="140" y="122" fill="#854d0e" font-size="12" font-weight="bold" text-anchor="middle">Moderate</text>
+        <rect x="180" y="105" width="70" height="25" rx="6" fill="url(#riskHigh)" stroke="#fca5a5" stroke-width="1"/>
+        <text x="215" y="122" fill="#7f1d1d" font-size="12" font-weight="bold" text-anchor="middle">High</text>
+    </g>
+
+    <!-- Probability + Prediction -->
+    <g transform="translate(420, 830)">
+        <rect x="0" y="0" width="280" height="145" rx="14" fill="#ffffff" stroke="#059669" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.05))"/>
+        <text x="140" y="30" fill="#059669" font-size="18" font-weight="bold" text-anchor="middle">🎯 Prediction</text>
+        <text x="140" y="60" fill="#475569" font-size="14" text-anchor="middle">Risk Probability</text>
+        <text x="140" y="95" fill="#eab308" font-size="36" font-weight="bold" text-anchor="middle">95%</text>
+        <text x="140" y="125" fill="#0f172a" font-size="16" font-weight="bold" text-anchor="middle">
+            Diabetes: Yes / No
+        </text>
+    </g>
+
+    <!-- Feature Importance -->
+    <g transform="translate(740, 830)">
+        <rect x="0" y="0" width="280" height="145" rx="14" fill="#ffffff" stroke="#8b5cf6" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.05))"/>
+        <text x="140" y="30" fill="#8b5cf6" font-size="18" font-weight="bold" text-anchor="middle">📈 Feature Importance</text>
+        <!-- Bars -->
+        <rect x="20" y="50" width="180" height="14" rx="4" fill="#e2e8f0"/>
+        <rect x="20" y="50" width="140" height="14" rx="4" fill="#ef4444"/>
+        <text x="210" y="61" fill="#ef4444" font-size="11" font-family="monospace" font-weight="bold">HbA1c</text>
+
+        <rect x="20" y="70" width="180" height="14" rx="4" fill="#e2e8f0"/>
+        <rect x="20" y="70" width="60" height="14" rx="4" fill="#f97316"/>
+        <text x="210" y="81" fill="#f97316" font-size="11" font-family="monospace" font-weight="bold">BMI</text>
+
+        <rect x="20" y="90" width="180" height="14" rx="4" fill="#e2e8f0"/>
+        <rect x="20" y="90" width="50" height="14" rx="4" fill="#eab308"/>
+        <text x="210" y="101" fill="#eab308" font-size="11" font-family="monospace" font-weight="bold">Age</text>
+
+        <rect x="20" y="110" width="180" height="14" rx="4" fill="#e2e8f0"/>
+        <rect x="20" y="110" width="25" height="14" rx="4" fill="#06b6d4"/>
+        <text x="210" y="121" fill="#06b6d4" font-size="11" font-family="monospace" font-weight="bold">Gender</text>
+    </g>
+
+    <!-- ========== TECH BADGES ========== -->
+    <g transform="translate(100, 1010)">
+        <rect x="0" y="0" width="180" height="32" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.05))"/>
+        <text x="90" y="21" fill="#0ea5e9" font-size="14" font-weight="bold" text-anchor="middle" font-family="monospace">Streamlit</text>
+    </g>
+    <g transform="translate(320, 1010)">
+        <rect x="0" y="0" width="180" height="32" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.05))"/>
+        <text x="90" y="21" fill="#059669" font-size="14" font-weight="bold" text-anchor="middle" font-family="monospace">Random Forest</text>
+    </g>
+    <g transform="translate(540, 1010)">
+        <rect x="0" y="0" width="180" height="32" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.05))"/>
+        <text x="90" y="21" fill="#8b5cf6" font-size="14" font-weight="bold" text-anchor="middle" font-family="monospace">SHAP</text>
+    </g>
+    <g transform="translate(760, 1010)">
+        <rect x="0" y="0" width="180" height="32" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.05))"/>
+        <text x="90" y="21" fill="#eab308" font-size="14" font-weight="bold" text-anchor="middle" font-family="monospace">SMOTE</text>
+    </g>
+    <g transform="translate(980, 1010)">
+        <rect x="0" y="0" width="180" height="32" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.05))"/>
+        <text x="90" y="21" fill="#ec4899" font-size="14" font-weight="bold" text-anchor="middle" font-family="monospace">scikit-learn</text>
+    </g>
+    <g transform="translate(1200, 1010)">
+        <rect x="0" y="0" width="180" height="32" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.05))"/>
+        <text x="90" y="21" fill="#06b6d4" font-size="14" font-weight="bold" text-anchor="middle" font-family="monospace">Pandas / NumPy</text>
+    </g>
+
+    <!-- Medical Disclaimer -->
+    <text x="700" y="1075" fill="#64748b" font-size="12" text-anchor="middle">
+        ⚕️ Educational &amp; research only — Not a substitute for professional clinical diagnosis
+    </text>
+
+</svg>
