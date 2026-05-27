@@ -25,7 +25,7 @@ It outputs:
 
 <div align="center">
 
-<img src="./assets/training-animation.svg" width="100%"/>
+<img src="assets/diabetes-pipeline-light.svg" width="100%"/>
 
 </div>
 
